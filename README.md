@@ -34,6 +34,7 @@ Possible Errors
 {
 	"message": "Email already registered."
 }
+```
 
 ### Login           POST  /user/login
 
