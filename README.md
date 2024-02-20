@@ -26,6 +26,15 @@ Standard Return     201 Created
 }
 ```
 
+Possible Errors
+
+403 FORBIDDEN
+
+```json
+{
+	"message": "Email already registered."
+}
+
 ### Login           POST  /user/login
 
 Standard Body

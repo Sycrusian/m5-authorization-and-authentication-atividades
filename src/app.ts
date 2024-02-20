@@ -3,10 +3,13 @@ import "reflect-metadata";
 import "express-async-errors";
 import express, { json } from "express";
 import helmet from "helmet";
+import cors from "cors";
 import { HandleErrors } from "./middlewares/HandleErrors.middleware";
 import { userRouter } from "./routes/user.router";
 
 export const app = express();
+
+app.use(cors());
 
 app.use(helmet());
 
