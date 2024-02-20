@@ -25,13 +25,13 @@ export class UserServices {
     const user = await prisma.user.findFirst({ where: { email: body.email }});
 
     if (!user) {
-      throw new AppError("Email or password incorrect.", 403);
+      throw new AppError("Email or password incorrect.", 401);
     }
 
     const compare = await bcrypt.compare(body.password, user.password);
 
     if (!compare) {
-      throw new AppError("Email or password incorrect.", 403);
+      throw new AppError("Email or password incorrect.", 401);
     }
 
     const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string, { expiresIn: "24h" });
